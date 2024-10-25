@@ -47,12 +47,11 @@ const App = () => {
 
   // Speech synthesis
 
-
   // Fetch words from API
   const fetchWords = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/words');
+      const response = await axios.get(`http://localhost:5000/words`);
       setWords(response.data);
       selectWeightedRandomWord(response.data);
     } catch (error) {
@@ -80,7 +79,7 @@ const App = () => {
       setFirstAttempt(true);
 
       try {
-        await axios.post('http://localhost:5000/words/check', {
+        await axios.post(`${url}/check`, {
           word: currentWord,
           scoreAdjustment,
         });
