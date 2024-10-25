@@ -51,7 +51,7 @@ const App = () => {
   const fetchWords = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:5000/words`);
+      const response = await axios.get(`https://typelearner.onrender.com/words`);
       setWords(response.data);
       selectWeightedRandomWord(response.data);
     } catch (error) {
@@ -79,7 +79,7 @@ const App = () => {
       setFirstAttempt(true);
 
       try {
-        await axios.post(`${url}/check`, {
+        await axios.post(`https://typelearner.onrender.com/check`, {
           word: currentWord,
           scoreAdjustment,
         });
@@ -195,7 +195,7 @@ const App = () => {
   // Remove word from list
   const removeWord = async () => {
     try {
-      await axios.delete(`http://localhost:5000/words/${currentWord}`);
+      await axios.delete(`https://typelearner.onrender.com/words/${currentWord}`);
       const updatedWords = words.filter(word => word.word !== currentWord);
       setWords(updatedWords);
       setUsedWords((prevUsedWords) => prevUsedWords.filter(word => word !== currentWord));
