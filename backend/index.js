@@ -9,7 +9,7 @@ const Word = require("./models/wordModel");
 const app = express();
 const port = 5000;
 
-// Enable CORS for all routes and origins
+// Enable CORS for all routes e and origins
 app.use(cors());
 
 // Enable parsing of JSON request bodies
