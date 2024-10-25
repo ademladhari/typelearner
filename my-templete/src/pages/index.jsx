@@ -1,18 +1,19 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect, useCallback, useRef } from 'react';
 import axios from 'axios';
 
 
 const App = () => {
   // State management
   const [words, setWords] = useState([]);
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [, setCurrentWordIndex] = useState(0);
   const [input, setInput] = useState('');
   const [score, setScore] = useState(0);
   const [attempts, setAttempts] = useState(0);
   const [hint, setHint] = useState([]);
   const [usedWords, setUsedWords] = useState([]);
   const [currentWord, setCurrentWord] = useState('');
-  const [showConfetti, setShowConfetti] = useState(false);
+  const [, setShowConfetti] = useState(false);
   const [showWord, setShowWord] = useState(false);
   const [volume, setVolume] = useState(1);
   const [rate, setRate] = useState(1);
@@ -20,7 +21,7 @@ const App = () => {
   const [firstAttempt, setFirstAttempt] = useState(true);
   const [voices, setVoices] = useState([]);
   const [selectedVoice, setSelectedVoice] = useState(null);
-  const [error, setError] = useState(null);
+  const [, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
   // Refs
