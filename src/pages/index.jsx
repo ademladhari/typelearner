@@ -79,7 +79,7 @@ const App = () => {
       setFirstAttempt(true);
 
       try {
-        await axios.post(`https://typelearner.onrender.com/check`, {
+        await axios.post(`https://typelearner.onrender.com/words/check`, {
           word: currentWord,
           scoreAdjustment,
         });
