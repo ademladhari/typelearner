@@ -7,4 +7,12 @@ export default defineConfig({
     react(),
     Pages(),
   ],
+  server: {
+    proxy: {
+      '/words': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+      },
+    },
+  },
 });

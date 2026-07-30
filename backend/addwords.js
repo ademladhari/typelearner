@@ -1,18 +1,118 @@
-const mongoose = require('mongoose');
-const Word = require('./models/wordModel');
+require("dotenv").config();
 
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/taskStuff', );
+const mongoose = require("mongoose");
+const Word = require("./models/wordModel");
 
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {
-  console.log('Connected to MongoDB');
-  addWords();
-});
+const mongoUri =
+  process.env.MONGODB_URI || process.env.REACT_APP_MONGODB_LOGIN_URL;
 
-// Array of words to add
+if (!mongoUri) {
+  console.error("Missing MONGODB_URI in backend/.env");
+  process.exit(1);
+}
+
 const words = [
+  "Accommodation",
+  "Advertisement",
+  "Analysis",
+  "Appointment",
+  "Assessment",
+  "Bureaucracy",
+  "Category",
+  "Colleague",
+  "Committee",
+  "Comparison",
+  "Competition",
+  "Compromise",
+  "Concentration",
+  "Conclusion",
+  "Conference",
+  "Consequence",
+  "Consistency",
+  "Contribution",
+  "Coordination",
+  "Criticism",
+  "Decision",
+  "Definition",
+  "Description",
+  "Development",
+  "Discipline",
+  "Discrimination",
+  "Distribution",
+  "Economics",
+  "Efficiency",
+  "Environment",
+  "Equipment",
+  "Establishment",
+  "Evaluation",
+  "Examination",
+  "Experience",
+  "Experiment",
+  "Explanation",
+  "Foundation",
+  "Frequency",
+  "Government",
+  "Implementation",
+  "Independence",
+  "Information",
+  "Initiative",
+  "Institution",
+  "Instruction",
+  "Interaction",
+  "Interpretation",
+  "Investment",
+  "Investigation",
+  "Management",
+  "Measurement",
+  "Membership",
+  "Motivation",
+  "Observation",
+  "Opportunity",
+  "Organization",
+  "Partnership",
+  "Performance",
+  "Permission",
+  "Perspective",
+  "Population",
+  "Possession",
+  "Preference",
+  "Preparation",
+  "Presentation",
+  "Principle",
+  "Probability",
+  "Procedure",
+  "Proportion",
+  "Qualification",
+  "Recommendation",
+  "Recognition",
+  "Recreation",
+  "Reflection",
+  "Regulation",
+  "Relationship",
+  "Representation",
+  "Requirement",
+  "Research",
+  "Resolution",
+  "Resource",
+  "Responsibility",
+  "Restriction",
+  "Revision",
+  "Satisfaction",
+  "Scholarship",
+  "Selection",
+  "Significance",
+  "Similarity",
+  "Solution",
+  "Specification",
+  "Strategy",
+  "Structure",
+  "Suggestion",
+  "Supervision",
+  "Technology",
+  "Transition",
+  "Translation",
+  "Understanding",
+  "Variation",
   "increase",
   "decrease",
   "rise",
@@ -51,7 +151,6 @@ const words = [
   "around",
   "nearly",
   "comparatively",
-  "proportion",
   "percentage",
   "majority",
   "minority",
@@ -62,23 +161,34 @@ const words = [
   "respectively",
   "in contrast",
   "similarly",
-  "on the other hand"
-]
+  "on the other hand",
+];
 
-
-
-
-
-const addWords = async () => {
+const seed = async () => {
   try {
+    await mongoose.connect(mongoUri);
+    console.log("Connected to MongoDB");
+    console.log("Database:", mongoose.connection.name);
+
+    let added = 0;
     for (const word of words) {
-      const newWord = new Word({ word });
-      await newWord.save();
+      const result = await Word.updateOne(
+        { word },
+        { $setOnInsert: { word, score: 1 } },
+        { upsert: true },
+      );
+      if (result.upsertedCount) added += 1;
     }
-    console.log('Words added successfully');
-    mongoose.connection.close();
+
+    const total = await Word.countDocuments();
+    console.log(`Seeded ${added} new words (${words.length - added} already existed)`);
+    console.log(`Total words in database: ${total}`);
   } catch (err) {
-    console.error('Error adding words:', err);
-    mongoose.connection.close();
+    console.error("Error seeding words:", err.message);
+    process.exit(1);
+  } finally {
+    await mongoose.connection.close();
   }
 };
+
+seed();

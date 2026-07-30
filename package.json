@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "backend": "npm --prefix backend start",
+    "backend:dev": "npm --prefix backend run dev"
   },
   "dependencies": {
     "@mui/material": "^6.1.5",

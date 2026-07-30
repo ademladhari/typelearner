@@ -1,0 +1,202 @@
+[
+  {
+    "word": "increase",
+    "score": 1
+  },
+  {
+    "word": "decrease",
+    "score": 1
+  },
+  {
+    "word": "rise",
+    "score": 1
+  },
+  {
+    "word": "fall",
+    "score": 1
+  },
+  {
+    "word": "fluctuate",
+    "score": 1
+  },
+  {
+    "word": "peak",
+    "score": 3
+  },
+  {
+    "word": "drop",
+    "score": 1
+  },
+  {
+    "word": "climb",
+    "score": 1
+  },
+  {
+    "word": "decline",
+    "score": 1
+  },
+  {
+    "word": "remain steady",
+    "score": -4
+  },
+  {
+    "word": "remain constant",
+    "score": 1
+  },
+  {
+    "word": "stabilize",
+    "score": 1
+  },
+  {
+    "word": "surge",
+    "score": 1
+  },
+  {
+    "word": "plummet",
+    "score": 1
+  },
+  {
+    "word": "grow",
+    "score": 1
+  },
+  {
+    "word": "shrink",
+    "score": 1
+  },
+  {
+    "word": "level off",
+    "score": 1
+  },
+  {
+    "word": "plateau",
+    "score": 1
+  },
+  {
+    "word": "double",
+    "score": 1
+  },
+  {
+    "word": "halve",
+    "score": 1
+  },
+  {
+    "word": "upward trend",
+    "score": 13
+  },
+  {
+    "word": "downward trend",
+    "score": 1
+  },
+  {
+    "word": "dramatically",
+    "score": -4
+  },
+  {
+    "word": "significantly",
+    "score": 1
+  },
+  {
+    "word": "slightly",
+    "score": 1
+  },
+  {
+    "word": "gradually",
+    "score": 1
+  },
+  {
+    "word": "sharply",
+    "score": 1
+  },
+  {
+    "word": "steadily",
+    "score": 1
+  },
+  {
+    "word": "rapidly",
+    "score": 1
+  },
+  {
+    "word": "moderately",
+    "score": 1
+  },
+  {
+    "word": "marginally",
+    "score": 1
+  },
+  {
+    "word": "substantially",
+    "score": 1
+  },
+  {
+    "word": "consistently",
+    "score": 1
+  },
+  {
+    "word": "approximately",
+    "score": 1
+  },
+  {
+    "word": "roughly",
+    "score": 1
+  },
+  {
+    "word": "around",
+    "score": 1
+  },
+  {
+    "word": "nearly",
+    "score": 1
+  },
+  {
+    "word": "comparatively",
+    "score": 1
+  },
+  {
+    "word": "proportion",
+    "score": 1
+  },
+  {
+    "word": "percentage",
+    "score": 1
+  },
+  {
+    "word": "majority",
+    "score": 1
+  },
+  {
+    "word": "minority",
+    "score": 1
+  },
+  {
+    "word": "over the period",
+    "score": 1
+  },
+  {
+    "word": "time span",
+    "score": 1
+  },
+  {
+    "word": "highest",
+    "score": 1
+  },
+  {
+    "word": "lowest",
+    "score": 1
+  },
+  {
+    "word": "respectively",
+    "score": 1
+  },
+  {
+    "word": "in contrast",
+    "score": 1
+  },
+  {
+    "word": "similarly",
+    "score": 1
+  },
+  {
+    "word": "on the other hand",
+    "score": 1
+  }
+]
