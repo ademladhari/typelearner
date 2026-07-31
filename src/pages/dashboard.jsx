@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import axios from 'axios';
 import { ArrowLeft, Headphones, Minus, Plus, Trash2 } from 'lucide-react';
 
-const API_URL = import.meta.env.VITE_API_URL || 'https://learn-polish.onrender.com';
+const API_URL = import.meta.env.VITE_API_URL || 'https://typelearner.onrender.com';
 
 const Dashboard = () => {
   const [words, setWords] = useState([]);
